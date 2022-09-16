@@ -34,8 +34,42 @@ vLista_de_ocupacoes = [ [0, 1, 0, 0, '0Desocupado'], [0, 3, 1, 3, '1Fazendeiro']
 
 vLista_de_titulos = ['Campones', 'Nobre', 'Barao', 'Conde', 'Duque', 'Rei', 'Imperador']
 
-# Inicializador de usuário manual -------------------------------------------------------
+# Objetos -------------------------------------------------------------------------------
+class recursos():
+  # self, int, int, int
+  def __init__(self, ouro, prestigio, devocao):
+    self.ouro = ouro
+    self.prestigio = prestigio
+    self.devocao = devocao
+class ocupacao():
+  # self, int, class
+  def __init__(self, nome, tier, recursos):
+    self.nome = nome
+    self.tier = tier
+    self.recursos = recursos
+class familia():
+  # self, string, int, array[id(string)]
+  def __init__(self, nome, renome, membros):
+    self.nome = nome
+    self.renome = renome
+    self.membros = membros
+class titulo():
+  # self, string, int, id(string)
+  def __init__(self, nome, tier, dono):
+    self.nome = nome
+    self.tier = tier
+    self.dono = dono
+class usuario():
+  # self, string, string, class, class/string?, class/string?, array[class]
+  def __init__(self, id, nome, recursos, ocupacao, familia, titulo):
+    self.id = id
+    self.nome = nome
+    self.recursos = recursos
+    self.ocupacao = ocupacao
+    self.familia = familia
+    self.titulo = titulo
 
+# Inicializador de usuário manual -------------------------------------------------------
 # Atualização do DB:
 # 0. Recursos
 # 0.0. Renome,  0.1. Ouro,        0.2. Prestígio, 0.3. Devoção,
@@ -47,7 +81,7 @@ vLista_de_titulos = ['Campones', 'Nobre', 'Barao', 'Conde', 'Duque', 'Rei', 'Imp
 #db[ID] [ [Renome, Ouro, Prestígio, Devoção], [Ocupacao, Título, Família], [Nome, Discriminator] ]
 
 #del db['227209279260590080'] #= [ [0, 10, 0, 0], [0, 0, 0], ["Kabal", "5415"] ]
-#del db['284799007384141825'] #= [ [0, 10, 0, 0], [0, 0, 0], ["Junel", "5109"] ]
+#del db['284799007384141825'] #= [ [0, 10, 0, 0], [0, 0, 0], ["June", "5109"] ]
 #del db['320782054964985869'] #= [ [0, 10, 0, 0], [0, 0, 0], ["Valman", "2329"] ]
 #del db['281238791203717131'] #= [ [0, 10, 0, 0], [0, 0, 0], ["Soldier", "9850"] ]
 
