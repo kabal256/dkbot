@@ -19,6 +19,7 @@ tz = pytz.timezone('America/Cuiaba')
 
 # Listas --------------------------------------------------------------------------------
 
+
 # Variáveis sistêmicas armazenadas no bd
 # Horas, Ban no pato
 db['s'] = [0,0]
@@ -35,32 +36,32 @@ vLista_de_ocupacoes = [ [0, 1, 0, 0, '0Desocupado'], [0, 3, 1, 3, '1Fazendeiro']
 vLista_de_titulos = ['Campones', 'Nobre', 'Barao', 'Conde', 'Duque', 'Rei', 'Imperador']
 
 # Objetos -------------------------------------------------------------------------------
-class recursos():
+class Recursos:
   # self, int, int, int
   def __init__(self, ouro, prestigio, devocao):
     self.ouro = ouro
     self.prestigio = prestigio
     self.devocao = devocao
-class ocupacao():
+class Ocupacao:
   # self, int, class
   def __init__(self, nome, tier, recursos):
     self.nome = nome
     self.tier = tier
     self.recursos = recursos
-class familia():
+class Familia:
   # self, string, int, array[id(string)]
   def __init__(self, nome, renome, membros):
     self.nome = nome
     self.renome = renome
     self.membros = membros
-class titulo():
+class Titulo:
   # self, string, int, id(string)
   def __init__(self, nome, tier, dono):
     self.nome = nome
     self.tier = tier
     self.dono = dono
-class usuario():
-  # self, string, string, class, class/string?, class/string?, array[class]
+class Usuario:
+  # self, string, string, class, string, string, array[class]
   def __init__(self, id, nome, recursos, ocupacao, familia, titulo):
     self.id = id
     self.nome = nome
@@ -161,7 +162,8 @@ async def on_message(message):
         '```')
 
     #2 Lugares
-    else if mensagem[1] in ['2', 'lugares','l']:  
+    elif mensagem[1] in ['2', 'lugares', 'l']:
+      print('Nao ta implementado ainda.')
       #2.1 Lugares - Onde estou
         #2.1.1 Lugares - Onde estou - Cidade (1/3)
         #2.1.2 Lugares - Onde estou - Igreja (0/3)
